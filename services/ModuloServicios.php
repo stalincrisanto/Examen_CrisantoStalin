@@ -70,6 +70,17 @@ class ModuloServicios extends MainService
             return null;
         }
     }
+
+    //ROLES
+    function mostrarRoles()
+    {
+        return $this->conexion->query("SELECT * FROM seg_rol");
+    }
+    function mostrarModulosPorRol($cod_rol)
+    {
+        return $this->conexion->query("SELECT * FROM rol_modulo WHERE COD_ROL='".$cod_rol."'");
+    }
+
 }
 
 ?>
